@@ -30,3 +30,17 @@ public class Hello
     }
 }
 ```
+## Strings
+```
+string emptyString = String.Empty;
+string anotherEmptyString = "";
+
+string firstName = "Shane";
+string lastName = "Rich";
+string fullName = firstName + " " + lastName;
+
+int x = 1, y = 2;
+int sum = x + y;
+string sumCalculation = String.Format("{0} + {1} = {2}", x, y, sum);
+Console.WriteLine(sumCalculation);
+```
