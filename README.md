@@ -44,3 +44,25 @@ int sum = x + y;
 string sumCalculation = String.Format("{0} + {1} = {2}", x, y, sum);
 Console.WriteLine(sumCalculation);
 ```
+## For Loops
+For loops take the following format in C#:
+```
+for( [variable to count iterations] ; [conditions checked for] ; [code to execute every loop])
+{
+
+}
+```
+The following will print even numbers between 0 and 16.
+```
+for(int i = 0; i < 16; i++)
+{
+
+    if(i % 2 == 1)
+    {
+        continue;
+    }
+
+    Console.WriteLine(i);
+
+}
+```
