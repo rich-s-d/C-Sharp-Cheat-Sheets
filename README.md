@@ -1,5 +1,12 @@
 # C-Sharp-Cheat-Sheet
 
+## Bash Commands
+```
+dotnet run
+dotnet new
+code .
+```
+
 ## Lists
 ```
 List<int> numbers = new List<int>();
