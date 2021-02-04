@@ -1,5 +1,7 @@
 # C-Sharp-Cheat-Sheet
 
+www.nuget.org for packages
+
 ## Bash Commands
 ```
 dotnet run
