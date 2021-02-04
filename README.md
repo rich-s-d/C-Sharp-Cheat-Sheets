@@ -1,5 +1,7 @@
 # C-Sharp-Cheat-Sheet
 
+Personal cheat sheet and tidbits for working in the C# .Net framework.
+
 www.nuget.org for packages
 
 ## Bash Commands
@@ -7,6 +9,17 @@ www.nuget.org for packages
 dotnet run
 dotnet new
 code .
+dotnet restore (collect packages in .csproj file)
+dotnet build 
+dotnet run (does a build and runs)
+dotnet run -- parameter (-- pass a parameter to the application, not the cli).
+```
+## File Types
+```
+.csproj (project file)
+.cs (c sharp program file)
+.dll (output binary code from the cs compiler)
+# the obj and bin folders (object and binary) are created on a restore and build, which means that you only need a .csproj and .cs to get up and running.
 ```
 
 ## Lists
