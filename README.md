@@ -21,7 +21,12 @@ dotnet run -- parameter (-- pass a parameter to the application, not the cli).
 .dll (output binary code from the cs compiler)
 # the obj and bin folders (object and binary) are created on a restore and build, which means that you only need a .csproj and .cs to get up and running.
 ```
-
+## Arrays
+Have a fixed size whereas lists can invoke the .Add() method.
+```
+# create a double point floating array with a length of three.
+double numbers = new [3]; 
+```
 ## Lists
 ```
 List<int> numbers = new List<int>();
