@@ -94,9 +94,17 @@ for(int i = 0; i < 16; i++)
 }
 ```
 ## Classes
-A class defines a new type. Classes abstract and encapulate.
+A class defines a new type. Classes abstract and encapulate. Contain state(data type, for example with a field definition) and behaviours (methods).
 ```
 
 ```
 ## Namespace
 If not working in a name space then you are working globally.
+```
+using system; 
+
+namespace GradeBook;
+namespace GradeBook.Math;
+```
+## .NET exceptions
+Null referernce exception = using a field or variable that has not been initialised.
