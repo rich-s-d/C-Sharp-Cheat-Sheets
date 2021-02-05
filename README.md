@@ -94,7 +94,7 @@ for(int i = 0; i < 16; i++)
 }
 ```
 ## Classes
-A class defines a new type. Classes abstract and encapulate. Contain state(data type, for example with a field definition) and behaviours (methods).
+A class defines a new type. A class makes objects. Classes abstract and encapulate. Contain state(data type, for example with a field definition) and behaviours (methods).
 ```
 
 ```
@@ -107,4 +107,4 @@ namespace GradeBook;
 namespace GradeBook.Math;
 ```
 ## .NET exceptions
-Null referernce exception = using a field or variable that has not been initialised.
+Null referernce exception = using a field or variable that has not been initialised and thereby == Null.
