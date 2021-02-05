@@ -93,3 +93,10 @@ for(int i = 0; i < 16; i++)
 
 }
 ```
+## Classes
+A class defines a new type. Classes abstract and encapulate.
+```
+
+```
+## Namespace
+If not working in a name space then you are working globally.
