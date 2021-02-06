@@ -2,7 +2,7 @@
 
 Personal cheat sheet and tidbits for working in the C# .Net framework.
 
-www.nuget.org for packages
+www.nuget.org for packages (search, choose .NET CLI tab for download link).
 
 ## Bash Commands
 ```
@@ -108,3 +108,23 @@ namespace GradeBook.Math;
 ```
 ## .NET exceptions
 Null referernce exception = using a field or variable that has not been initialised and thereby == Null.
+
+## Testing - Unit Tests
+Test for correct result as well as edge conditions. Automated with test runner. xUnit.net template available (using the API Assert, an xUnit namespace). Studio Code has a test runner extension and the dotnet CLI also has a test runner.
+```
+using System;
+using Xunit;
+
+namespace GradeBook.Tests
+{
+    public class UnitTest1
+    {
+        [Fact] // this attribute is attached to the method Test1. An attribute is like a decorator.
+        public void Test1()
+        {
+
+        }
+    }
+}
+```
+
