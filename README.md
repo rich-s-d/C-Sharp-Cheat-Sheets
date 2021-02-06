@@ -94,7 +94,7 @@ for(int i = 0; i < 16; i++)
 }
 ```
 ## Classes
-A class defines a new type. A class makes objects. Classes abstract and encapulate. Contain state(data type, for example a field definition) and behaviours (methods).
+A class defines a new type. A class makes objects. Classes abstract and encapulate. Contain state(data type, for example a field definition) and behaviours (methods). If calling a class from another project this needs to be added to the .csproj file (dotnet add reference PATH).
 ```
 
 ```
