@@ -37,7 +37,7 @@ Reference types store a pointer (a reference) to a location in memory and value 
 var b = new Book("Grades"); // stores a location, for example 1072.
 var x = 3; // stores a value, 3.
 ```
-When passing a parameter to a method in C# it is always pass by value unless using the keyword 'ref'.
+When passing a parameter to a method in C# it is always pass by value unless using the keyword 'ref' or 'out' (in out you are forced to initialise the parameter).
 ```
 [Fact]
 public void CSharpCanPassByRef()
