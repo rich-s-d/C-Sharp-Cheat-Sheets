@@ -13,6 +13,7 @@ dotnet restore (collect packages in .csproj file)
 dotnet build 
 dotnet run (does a build and runs)
 dotnet run -- parameter (-- pass a parameter to the application, not the cli).
+dotnet test
 ```
 ## File Types
 ```
@@ -110,7 +111,7 @@ namespace GradeBook.Math;
 Null referernce exception = using a field or variable that has not been initialised and thereby == Null.
 
 ## Testing - Unit Tests
-Test for correct result as well as edge conditions. Automated with test runner. xUnit.net template available (using the API Assert, an xUnit namespace). Studio Code has a test runner extension and the dotnet CLI also has a test runner.
+Test for correct result as well as edge conditions. Automated with test runner. xUnit.net template available (using the API Assert, an xUnit namespace). Studio Code has a test runner extension and the dotnet CLI also has a test runner (dotnet test).
 ```
 using System;
 using Xunit;
