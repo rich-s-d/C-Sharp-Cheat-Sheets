@@ -7,7 +7,7 @@ www.nuget.org for packages (search, choose .NET CLI tab for download link).
 ## Bash Commands
 ```
 dotnet run
-dotnet new
+dotnet new (console, xunit, sln etc.)
 code .
 dotnet restore (collect packages in .csproj file)
 dotnet build 
@@ -15,13 +15,46 @@ dotnet run (does a build and runs)
 dotnet run -- parameter (-- pass a parameter to the application, not the cli).
 dotnet test
 ```
+## Syntax Conventions
+Public members have an uppercase name.
+```
+public class Book;
+public string Name;
+private List<double> grades;
+
+```
 ## File Types
 ```
 .csproj (project file)
 .cs (c sharp program file)
 .dll (output binary code from the cs compiler)
 # the obj and bin folders (object and binary) are created on a restore and build, which means that you only need a .csproj and .cs to get up and running.
+.sln (solution file, can be read by VSCode and dotnet CLI, keeps track of projects and tests so projects can be built and tested from one location, usess dotnet new sln).
 ```
+## Reference and Value Types
+Reference types store a pointer (a reference) to a location in memory and value types store the actual value itself.
+```
+var b = new Book("Grades"); // stores a location, for example 1072.
+var x = 3; // stores a value, 3.
+```
+When passing a parameter to a method in C# it is always pass by value unless using the keyword 'ref'.
+```
+[Fact]
+public void CSharpCanPassByRef()
+{
+    var book1 = GetBook("Book 1");
+    GetBookSetName(ref book1, "New Name"); // Pass by reference uses the ref keyword
+
+    Assert.Equal("New Name", book1.Name);
+}
+
+private void GetBookSetName(ref Book book, string name) // Pass by reference uses the ref keyword
+{
+    book = new Book(name);
+    book.Name = name;
+}
+```
+
 ## Arrays
 Have a fixed size whereas lists can invoke the .Add() method.
 ```
