@@ -97,7 +97,18 @@ for(int i = 0; i < 16; i++)
 ## Classes
 A class defines a new type. A class makes objects. Classes abstract and encapulate. Contain state(data type, for example a field definition) and behaviours (methods). If calling a class from another project this needs to be added to the .csproj file (dotnet add reference ../path/.../project.csproj). An internal class can only be used inside of that project (public can be seen by other projects.
 ```
-
+// class 'Book' with an explicite constructor (as opposed to implicate, which .NET runtime uses by default to construct a class).
+public class Book
+    {
+        // explicite constructor (method name same as class)
+        public Book(string name)
+        {
+            this.name = name;
+            grades = new List<double>();
+        }
+        // class fields
+        private List<double> grades;
+        private string name;
 ```
 ## Namespace
 If not working in a name space then you are working globally.
