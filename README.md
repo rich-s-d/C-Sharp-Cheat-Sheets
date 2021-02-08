@@ -4,6 +4,9 @@ Personal cheat sheet and tidbits for working in the C# .Net framework.
 
 www.nuget.org for packages (search, choose .NET CLI tab for download link).
 
+## Useful to remember
+F12 or right click Go to Definition to see underlying type and source code.
+
 ## Bash Commands
 ```
 dotnet run
@@ -32,7 +35,7 @@ private List<double> grades;
 .sln (solution file, can be read by VSCode and dotnet CLI, keeps track of projects and tests so projects can be built and tested from one location, usess dotnet new sln).
 ```
 ## Reference and Value Types
-Reference types store a pointer (a reference) to a location in memory and value types store the actual value itself. Anything invoked by a class is a reference type (although a struct behaves like a value type). Int, float etc are value types (they are in fact type struct Int32 with the alias int).
+Reference types store a pointer (a reference) to a location in memory and value types store the actual value itself. Anything invoked by a class is a reference type (although remember that a struct type behaves like a value type). Int, double etc are value types (they are in fact type struct eg, struct Int32 with the alias int or struct Double with alias double). Strings are an exception to the rule, they are reference types (class types, not struct), but sometimes they behave like value types, in other words, strings are immutable in C#.
 ```
 var b = new Book("Grades"); // stores a location, for example 1072.
 var x = 3; // stores a value, 3.
@@ -74,6 +77,13 @@ private int GetInt()
 {
     return 3;
 }
+```
+## Controlling execution flow
+```
+&& \\ and
+|| \\ or
+
+
 ```
 
 ## Arrays
