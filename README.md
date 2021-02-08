@@ -32,7 +32,7 @@ private List<double> grades;
 .sln (solution file, can be read by VSCode and dotnet CLI, keeps track of projects and tests so projects can be built and tested from one location, usess dotnet new sln).
 ```
 ## Reference and Value Types
-Reference types store a pointer (a reference) to a location in memory and value types store the actual value itself.
+Reference types store a pointer (a reference) to a location in memory and value types store the actual value itself. Anything invoked by a class is a reference type (although a struct behaves like a value type). Int, float etc are value types (they are in fact type struct Int32 with the alias int).
 ```
 var b = new Book("Grades"); // stores a location, for example 1072.
 var x = 3; // stores a value, 3.
