@@ -53,6 +53,27 @@ private void GetBookSetName(ref Book book, string name) // Pass by reference use
     book = new Book(name);
     book.Name = name;
 }
+
+// or 
+
+[Fact]
+public void Test1()
+{
+    var x = GetInt();
+    SetInt(ref x);
+
+    Assert.Equal(42, x); // this test passes. To change x in this instance where x is passed as a parameter to the method SetInt it must be explicity passed as a reference type.
+}
+
+private void SetInt(ref int z)
+{
+    z = 42;
+}
+
+private int GetInt()
+{
+    return 3;
+}
 ```
 
 ## Arrays
