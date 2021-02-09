@@ -173,6 +173,14 @@ do
 result.Average /= grades.Count;
 
 // while 
+while(index < grades.Count)
+{
+    result.High = Math.Max(result.High, grades[index]);
+    result.Low = Math.Min(result.Low, grades[index]);
+    result.Average += grades[index];
+    index += 1;
+} 
+result.Average /= grades.Count;
 ```
 ### Jumping statements
 break and continue as per python.
