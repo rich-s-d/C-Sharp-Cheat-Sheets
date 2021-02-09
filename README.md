@@ -78,14 +78,6 @@ private int GetInt()
     return 3;
 }
 ```
-## Controlling execution flow
-```
-&& \\ and
-|| \\ or
-
-
-```
-
 ## Arrays
 Have a fixed size whereas lists can invoke the .Add() method.
 ```
@@ -136,8 +128,12 @@ int sum = x + y;
 string sumCalculation = String.Format("{0} + {1} = {2}", x, y, sum);
 Console.WriteLine(sumCalculation);
 ```
-## For Loops
-For loops take the following format in C#:
+## Controlling execution flow
+```
+&& \\ and
+|| \\ or
+```
+### Loops (for, foreach, do while and while)
 ```
 for( [variable to count iterations] ; [conditions checked for] ; [code to execute every loop])
 {
@@ -146,17 +142,59 @@ for( [variable to count iterations] ; [conditions checked for] ; [code to execut
 ```
 The following will print even numbers between 0 and 16.
 ```
+// for
 for(int i = 0; i < 16; i++)
 {
-
     if(i % 2 == 1)
     {
         continue;
     }
-
     Console.WriteLine(i);
-
 }
+
+// foreach
+foreach(var grade in grades)
+{
+    result.High = Math.Max(result.High, grade);
+    result.Low = Math.Min(result.Low, grade);
+    result.Average += grade;
+}
+result.Average /= grades.Count;
+
+// do while
+var index = 0;
+do 
+{
+    result.High = Math.Max(result.High, grades[index]);
+    result.Low = Math.Min(result.Low, grades[index]);
+    result.Average += grades[index];
+    index += 1;
+} while(index < grades.Count);
+result.Average /= grades.Count;
+
+// while 
+```
+### Jumping statements
+break and continue as per python.
+```
+break; (break out and stop iterating completely)
+continue; (skip this one and continue with the next iteration)
+```
+### Switch
+with or without pattern matching.
+```
+// with
+switch(result.Average)
+{
+    case var d when d >= 90.0: // the declared variable d takes the value provided to switch(result.Average). 
+        result.Letter = 'A';
+        break;
+// without
+switch(letter)
+{
+    case 'A':
+        AddGrade(90);
+        break;
 ```
 ## Classes
 A class defines a new type. A class makes objects. Classes abstract and encapulate. Contain state(data type, for example a field definition) and behaviours (methods). If calling a class from another project this needs to be added to the .csproj file (dotnet add reference ../path/.../project.csproj). An internal class can only be used inside of that project (public can be seen by other projects.
