@@ -205,17 +205,40 @@ switch(letter)
         break;
 ```
 ### Exception Classes/Objects
-Custom exception or built-in exceptions. General format:
+Custom exception or built-in exceptions. General format given:
+```
+public void AddGrade(double grade)
+{   
+    if (grade >= 0 && grade <= 100)
+    {
+        grades.Add(grade);
+    }
+    else
+    {
+        throw new ArgumentException($"Invalid {nameof(grade)}");
+    }
+}
+```
+Is...
 ```
 try
 {
 var grade = double.Parse(input);
 book.AddGrade(grade);
 }
-catch(Exception ex) // defining a variable ex of class Exception, the general exception class. Usually better to catch and handle individual exception types, eg, catch an ArgumentException.
+catch(Exception ex) // defining a variable ex of class Exception, the general exception class. Usually better to catch and handle individual exception types, eg, catch an ArgumentException, FormatException, etc (stacking them).
 {
     System.Console.WriteLine(ex.Message);
     throw; // throw the exception again if you want to force the program to crash in the case that it should not continue or something else should handle the exception.
+}
+\\ for example
+catch(ArgumentException ex)
+{
+    Console.WriteLine(ex.Message)
+}
+catch(FormatException ex)
+{
+    Console.WriteLine(ex.Message)
 }
 ```
 ## Classes
@@ -234,6 +257,9 @@ public class Book
         private List<double> grades;
         private string name;
 ```
+### Overloading methods
+Methods can have the same name in a class because the compiler looks method signature, ie., method name, parameter types and number of parameters, not just for not just the method name. The return type is NOT part of the method signature.
+
 ## Namespace
 If not working in a name space then you are working globally.
 ```
