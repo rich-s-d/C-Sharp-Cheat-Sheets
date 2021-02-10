@@ -204,6 +204,20 @@ switch(letter)
         AddGrade(90);
         break;
 ```
+### Exception Classes/Objects
+Custom exception or built-in exceptions. General format:
+```
+try
+{
+var grade = double.Parse(input);
+book.AddGrade(grade);
+}
+catch(Exception ex) // defining a variable ex of class Exception, the general exception class. Usually better to catch and handle individual exception types, eg, catch an ArgumentException.
+{
+    System.Console.WriteLine(ex.Message);
+    throw; // throw the exception again if you want to force the program to crash in the case that it should not continue or something else should handle the exception.
+}
+```
 ## Classes
 A class defines a new type. A class makes objects. Classes abstract and encapulate. Contain state(data type, for example a field definition) and behaviours (methods). If calling a class from another project this needs to be added to the .csproj file (dotnet add reference ../path/.../project.csproj). An internal class can only be used inside of that project (public can be seen by other projects.
 ```
