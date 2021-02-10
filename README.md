@@ -261,6 +261,7 @@ public class Book
 Methods can have the same name in a class because the compiler looks method signature, ie., method name, parameter types and number of parameters, not just for not just the method name. The return type is NOT part of the method signature.
 
 ### Properties
+Encapsulate state to control read and writing (get and set) to a property of a type/class. This encapsulation is an advantage using a property over a field.
 ```
 public string Name
 {
@@ -276,7 +277,7 @@ public string Name
         }
         else
         {
-            throw new NullReferenceException();
+            throw new Exception();
         }
     }
 ```
