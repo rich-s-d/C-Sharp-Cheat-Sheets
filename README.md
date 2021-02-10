@@ -242,7 +242,7 @@ catch(FormatException ex)
 }
 ```
 ## Classes
-A class defines a new type. A class makes objects. Classes abstract and encapulate. Contain state(data type, for example a field definition) and behaviours (methods). If calling a class from another project this needs to be added to the .csproj file (dotnet add reference ../path/.../project.csproj). An internal class can only be used inside of that project (public can be seen by other projects.
+A class defines a new type. A class makes objects. Classes abstract and encapulate. Contain state(data type, for example a field definition) and behaviours (methods). If calling a class from another project this needs to be added to the .csproj file (dotnet add reference ../path/.../project.csproj). An internal class can only be used inside of that project (public can be seen by other projects. Constructors can be overloaded (different constructor signatures). Readonly fields can be used in constructors and they are a fantastic way to ensure that information that is set at construction can not be changed elsewhere in the program.
 ```
 // class 'Book' with an explicite constructor (as opposed to implicate, which .NET runtime uses by default to construct a class).
 public class Book
@@ -258,7 +258,7 @@ public class Book
         private string name;
 ```
 ### Overloading methods
-Methods can have the same name in a class because the compiler looks method signature, ie., method name, parameter types and number of parameters, not just for not just the method name. The return type is NOT part of the method signature.
+Just as constructors can be overloaded, methods can too. Constructors and methods can have the same name because the compiler looks at a signature, ie., method name, parameter types and number of parameters, not just the method or constructor name. The return type is not part of the method signature.
 
 ### Properties
 Encapsulate state to control read and writing (get and set) to a property of a type/class. This encapsulation is an advantage using a property over a field.
@@ -280,6 +280,16 @@ public string Name
             throw new Exception();
         }
     }
+```
+### Readonly fields
+Can not be assigned to unless in a constructor or initialiser.
+```
+readonly string category;
+```
+### Const fields (are static).
+Even more restrictive than readonly; defined not able to be set or modified in the constructor. It is a static field that can be accessed from the class, ie., Book.CATEGORY. This makes sense; it never changes to it does not need to be assoicated with each object created by the type but simply the type itself.
+```
+public const string CATEGORY = "Science";
 ```
 ## Namespace
 If not working in a name space then you are working globally.
