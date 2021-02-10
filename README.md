@@ -260,6 +260,26 @@ public class Book
 ### Overloading methods
 Methods can have the same name in a class because the compiler looks method signature, ie., method name, parameter types and number of parameters, not just for not just the method name. The return type is NOT part of the method signature.
 
+### Properties
+```
+public string Name
+{
+    get
+    {
+        return name;
+    }
+    set
+    {
+        if(!String.IsNullOrEmpty(value))
+        {
+            name = value;
+        }
+        else
+        {
+            throw new NullReferenceException();
+        }
+    }
+```
 ## Namespace
 If not working in a name space then you are working globally.
 ```
