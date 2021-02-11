@@ -291,6 +291,8 @@ Even more restrictive than readonly; defined not able to be set or modified in t
 ```
 public const string CATEGORY = "Science";
 ```
+### Delegates and Events
+See module 8 of C sharp fundementals 1 by Scott Allen.
 ## Namespace
 If not working in a name space then you are working globally.
 ```
@@ -320,4 +322,7 @@ namespace GradeBook.Tests
     }
 }
 ```
-
+## OOP in C#
+1. Encapsulation - hide details using methods and properties, also by using access modifiers public or private give explicit control.
+2. Inheritance - reuse code across similar classes.
+3. Polymorphism - objects of the same type that can behave differently.
