@@ -326,3 +326,23 @@ namespace GradeBook.Tests
 1. Encapsulation - hide details using methods and properties, also by using access modifiers public or private give explicit control.
 2. Inheritance - reuse code across similar classes.
 3. Polymorphism - objects of the same type that can behave differently.
+
+### Encapsulation
+Most import of the three pillars!
+
+### Inheritance
+1. Base class
+2. Derived class
+```
+public class NamedObject
+{
+    public string Name
+    {
+        get;
+        set;
+    }
+}
+public class Book : NamedObject
+```
+In the above example we can describe Book as a NamedOject. NamedOject is the base class, Book is the derived class. Because Book is a NamedOject, it will inherit the property Name. Essentially the derived class inherits methods, properties etc from the base class.
+
