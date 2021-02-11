@@ -344,5 +344,5 @@ public class NamedObject
 }
 public class Book : NamedObject
 ```
-In the above example we can describe Book as a NamedOject. NamedOject is the base class, Book is the derived class. Because Book is a NamedOject, it will inherit the property Name. Essentially the derived class inherits methods, properties etc from the base class.
+In the above example we can describe Book as a NamedOject. NamedOject is the base class, Book is the derived class. Because Book is a NamedOject, it will inherit the property Name. Essentially the derived class inherits methods, properties etc from the base class. To conclude, everything in .NET dervices from the System.Object base class (in the above example, the base class NamedObject could be written as follows; public class NamedObject : System.Object
 
