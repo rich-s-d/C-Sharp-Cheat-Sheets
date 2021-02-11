@@ -325,7 +325,7 @@ namespace GradeBook.Tests
 ## OOP in C#
 1. Encapsulation - hide details using methods and properties, also by using access modifiers public or private give explicit control.
 2. Inheritance - reuse code across similar classes.
-3. Polymorphism - objects of the same type that can behave differently.
+3. Polymorphism - objects of the same type that can behave differently (also can be considered a form of encapsulation - it can hide details behind an object, ie. how to store data where).
 
 ### Encapsulation
 Most import of the three pillars!
@@ -344,5 +344,24 @@ public class NamedObject
 }
 public class Book : NamedObject
 ```
-In the above example we can describe Book as a NamedOject. NamedOject is the base class, Book is the derived class. Because Book is a NamedOject, it will inherit the property Name. Essentially the derived class inherits methods, properties etc from the base class. To conclude, everything in .NET dervices from the System.Object base class (in the above example, the base class NamedObject could be written as follows; public class NamedObject : System.Object
+In the above example we can describe Book as a NamedOject. NamedOject is the base class, Book is the derived class. Because Book is a NamedOject, it will inherit the property Name. Essentially the derived class inherits methods, properties etc from the base class. To conclude, everything in .NET dervices from the System.Object base class (in the above example, the base class NamedObject could be written as follows; public class NamedObject : System.Object - the keyword shortcut for which is object with a lower case o.
+
+### Polymorphism
+The ability of an object to take different forms. To learn this the object class Abstract can be introduced.
+```
+public abstract class BookBase
+{
+    public void AddGrade(double grade)
+    {
+        ...implimentation here...
+    }
+}
+
+// But because we cant say what the implimentation is at this level (the abstract class simply defines a base class from which different implemtations of book can be instantiated), we nake the AddGrade method abstract as well: 
+
+public abstract class BookBase
+{
+    public abstract void AddGrade(double grade); 
+}
+```
 
