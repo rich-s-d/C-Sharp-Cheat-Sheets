@@ -357,11 +357,61 @@ public abstract class BookBase
     }
 }
 
-// But because we cant say what the implimentation is at this level (the abstract class simply defines a base class from which different implemtations of book can be instantiated), we nake the AddGrade method abstract as well: 
+// But because we cant say what the implimentation is at this level (the abstract class simply defines a base class from which different implemtations of book can be instantiated), we make the AddGrade method abstract as well: 
 
 public abstract class BookBase
 {
     public abstract void AddGrade(double grade); 
 }
 ```
+Inherited classes must provide an implementation of the abstract members in the base class. Derived class methods can override abstract and virtual methods. If we make BookBase a NamedObject, we must provide the implementation for the name, in this case a constructor, because NamedObject requires the parameter 'string name' in its constructor.
+```
+namespace GradeBook
+{
+    public class NamedObject : System.Object // Usually you would not write System.Object as it is implicitly the Base Class of everything.
+    {
+        // class constuctor can automatically bw generated with right click 'generate constructor NamedObject'
+        public NamedObject(string name)
+        {
+            Name = name;
+        }
 
+        public string Name
+        {
+            get;
+            set;
+        }
+    }
+}
+
+public abstract class BookBase : NamedObject
+    {
+        public BookBase(string name) : base(name)
+        {
+        }
+        public abstract void AddGrade(double grade); 
+    }
+    public class Book : BookBase
+    {
+        // make an explicite constructor (as opposed to implicate, which .NET runtime uses by default to construct a class)
+        public Book(string name) : base(name)
+        {
+            category = "";
+            Name = name;
+            grades = new List<double>();
+        }
+        
+// override below because AddGrade is an abstract method in the Base Class BookBase.
+
+    public override void AddGrade(double grade)
+    {   
+        if (grade >= 0 && grade <= 100)
+        {
+            grades.Add(grade);
+        }
+        else
+        {
+            throw new ArgumentException($"Invalid {nameof(grade)}");
+        }
+    }
+```
