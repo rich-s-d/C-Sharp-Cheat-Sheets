@@ -6,6 +6,9 @@ www.nuget.org for packages (search, choose .NET CLI tab for download link).
 
 ## Useful to remember
 F12 or right click Go to Definition to see underlying type and source code.
+Right click 'change symbol' will refactor the name of a class, method etc through the program.
+Right click 'implement interface'.
+Generally click on the lightbulb in Studio Code for automated implementations, extractions etc.
 
 ## Bash Commands
 ```
@@ -20,11 +23,19 @@ dotnet test
 ```
 ## Syntax Conventions
 Public members have an uppercase name.
+Interfaces begin with an uppercase I.
+Constants are in capitals.
 ```
 public class Book;
 public string Name;
 private List<double> grades;
 
+public interface IBook
+{
+    etc..
+}
+
+public const string CATEGORY = "Science"
 ```
 ## File Types
 ```
@@ -328,8 +339,31 @@ namespace GradeBook.Tests
 3. Polymorphism - objects of the same type that can behave differently (also can be considered a form of encapsulation - it can hide details behind an object, ie. how to store data where).
 
 ### Encapsulation
-Most import of the three pillars!
+Most import of the three pillars! Other than using classes, methods fields and properties to give encapsulation, one can also use interfaces. Interfaces are similar to a class, but they are pure, meaning that unlike a class they do not require implemenation details. So whereas an abstract class (described further below under polymorphism) can contain methods and code, an interface is only going to describe the members that will be available on this type. An unlimited number of interfaces can be added to a class in a comma seperated list after the inherited base class. When you implement an interface, you must have those members in your class - also if those members are abstract. To make methods available in a class use the override keyword. 
+'''
+public interface IBook
+{   
+    // note that public is not required here as it is public by default; types that implement an interface must have these methods available. Members are defined below.
+    void AddGrade(double grade);
+    Statistics GetStatistics();
+    string Name { get;}
+    // event GradeAddedDelegate GradeAdded;
 
+}
+public abstract class Book : NamedObject, IBook // Only one base class can be added to a class but zero or more interfaces can be added.
+{
+    public Book(string name) : base(name)
+    {
+    }
+    // public abstract Statistics GetStatistics();
+    public abstract void AddGrade(double grade);
+    // Virtual keyword says that a derived class may choose to override this implementation.
+    public virtual Statistics GetStatistics()
+    {
+        throw new NotImplementedException();
+    }
+}
+'''
 ### Inheritance
 1. Base class
 2. Derived class
@@ -342,7 +376,7 @@ public class NamedObject
         set;
     }
 }
-public class Book : NamedObject
+public class Book : NamedObject 
 ```
 In the above example we can describe Book as a NamedOject. NamedOject is the base class, Book is the derived class. Because Book is a NamedOject, it will inherit the property Name. Essentially the derived class inherits methods, properties etc from the base class. To conclude, everything in .NET dervices from the System.Object base class (in the above example, the base class NamedObject could be written as follows; public class NamedObject : System.Object - the keyword shortcut for which is object with a lower case o.
 
@@ -414,4 +448,9 @@ public abstract class BookBase : NamedObject
             throw new ArgumentException($"Invalid {nameof(grade)}");
         }
     }
+```
+### IDisposable
+.NET has a garbage collector to release unmanaged resources but if we are dealing with a file or something that requires immediate cleaning/closing etc then use IDisposable. If you see IDisposible interface on a class in .NET it suggests that they need something to be freed or released. For example File.AppendText ultimately implements IDisposable so it is something that needs to be cleaned up (using the methods available under IDisposable, namely close() and dispose().
+```
+
 ```
