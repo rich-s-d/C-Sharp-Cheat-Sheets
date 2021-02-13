@@ -450,7 +450,13 @@ public abstract class BookBase : NamedObject
     }
 ```
 ### IDisposable
-.NET has a garbage collector to release unmanaged resources but if we are dealing with a file or something that requires immediate cleaning/closing etc then use IDisposable. If you see IDisposible interface on a class in .NET it suggests that they need something to be freed or released. For example File.AppendText ultimately implements IDisposable so it is something that needs to be cleaned up (using the methods available under IDisposable, namely close() and dispose().
+.NET has a garbage collector to release unmanaged resources but if we are dealing with a file or something that requires immediate cleaning/closing etc then use IDisposable. If you see IDisposible interface on a class in .NET it suggests that they need something to be freed or released. For example File.AppendText ultimately implements IDisposable so it is something that needs to be cleaned up (using the methods available under IDisposable, namely close() and dispose(). A useful work around is to use the following using statement, as C# will automatically run a finally statement at the end of the bracket to clean/close the file. This is the same process as Python's "with open(day5.txt as f)" statement:
 ```
-
+public override void AddGrade(double grade)
+{
+    using(var writer = File.AppendText($"{Name}.txt"))
+    {
+        writer.WriteLine(grade);
+    }
+}
 ```
