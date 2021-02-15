@@ -340,7 +340,7 @@ namespace GradeBook.Tests
 
 ### Encapsulation
 Most import of the three pillars! Other than using classes, methods fields and properties to give encapsulation, one can also use interfaces. Interfaces are similar to a class, but they are pure, meaning that unlike a class they do not require implemenation details. So whereas an abstract class (described further below under polymorphism) can contain methods and code, an interface is only going to describe the members that will be available on this type. An unlimited number of interfaces can be added to a class in a comma seperated list after the inherited base class. When you implement an interface, you must have those members in your class - also if those members are abstract. To make methods available in a class use the override keyword. 
-'''
+```
 public interface IBook
 {   
     // note that public is not required here as it is public by default; types that implement an interface must have these methods available. Members are defined below.
@@ -363,7 +363,7 @@ public abstract class Book : NamedObject, IBook // Only one base class can be ad
         throw new NotImplementedException();
     }
 }
-'''
+```
 ### Inheritance
 1. Base class
 2. Derived class
