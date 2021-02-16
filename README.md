@@ -334,7 +334,7 @@ namespace GradeBook.Tests
 }
 ```
 ### Null reference exceptions
-Class definitions are now non-nullable by default.
+A tool to help identify variables and fields that are not pointing to an object and thereby giving null reference exceptions. Class definitions, which are reference types (pointers) are now non-nullable by default.
 ```
 Book book = null; //will cause a linting error in studio code.
 ```
