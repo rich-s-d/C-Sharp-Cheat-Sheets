@@ -2,6 +2,9 @@
 
 Personal cheat sheet and tidbits for working in the C# .Net framework.
 
+## Resources
+pluralsight.com (search Scott Allen)
+http://wirfs-brock.com (Rebecca Wirfs-Brock, book on Object Oriented Programming). OOP; objects are either knowing things, deciding things or doing things.
 www.nuget.org for packages (search, choose .NET CLI tab for download link).
 
 ## Useful to remember
@@ -9,6 +12,12 @@ F12 or right click Go to Definition to see underlying type and source code.
 Right click 'change symbol' will refactor the name of a class, method etc through the program.
 Right click 'implement interface'.
 Generally click on the lightbulb in Studio Code for automated implementations, extractions etc.
+
+## To be aware of
+LINQ Language Integrated Query. When this was introduced to C# it introduced some of the biggest changes to the language since it was invented. These changes can be helpful outside of LINQ.
+Build in generic collections; Interfaces, Classes, Delegates.
+Async C#; using async, await, task.
+ASP.Net is the Microsoft Web Framework.
 
 ## Bash Commands
 ```
@@ -25,6 +34,7 @@ dotnet test
 Public members have an uppercase name.
 Interfaces begin with an uppercase I.
 Constants are in capitals.
+Underscores have conventionally be used as a prefix to a private member variable, e.g. _customerId
 ```
 public class Book;
 public string Name;
@@ -36,6 +46,7 @@ public interface IBook
 }
 
 public const string CATEGORY = "Science"
+private void double _customerId;
 ```
 ## File Types
 ```
