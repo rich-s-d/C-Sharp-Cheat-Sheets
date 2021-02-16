@@ -333,6 +333,15 @@ namespace GradeBook.Tests
     }
 }
 ```
+### Null reference exceptions
+Class definitions are now non-nullable by default.
+```
+Book book = null; //will cause a linting error in studio code.
+```
+But if you need to make a reference type nullable, ie., this book has no information so it needs to be instatiated as a null value, use a question mark:
+```
+Book? book = null;
+```
 ## OOP in C#
 1. Encapsulation - hide details using methods and properties, also by using access modifiers public or private give explicit control.
 2. Inheritance - reuse code across similar classes.
