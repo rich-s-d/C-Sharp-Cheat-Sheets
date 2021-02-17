@@ -314,7 +314,6 @@ Even more restrictive than readonly; defined not able to be set or modified in t
 public const string CATEGORY = "Science";
 ```
 ### Delegates and Events
-See module 8 of C sharp fundementals 1 by Scott Allen.
 A delegate describes what a method will look like. A delegate points to and invokes different methods; the method has to have a specific shape and structure that is defined by the delegate (ie., return type, types of parameters, numbers of parameters). For example you can implement a variable of delegate type, which can point to various methods with the same structure, but with different implementations, so one could write to a file, another to the console.
 ```
 public delegate string WriteLogDelegate(string logMessage); // delegate describes structure, ie, must return string, takes one parameter of type string.
@@ -361,7 +360,30 @@ string ReturnMessage2(string message)
     return message.ToUpper();
 }
 ```
-Multi-cast delegates are powerful because you can declare a varibale of a delegate type and then point it at various methods that is turn perform various tasks!
+Multi-cast delegates are powerful because you can declare a varibale of a delegate type and then point it at various methods that perform different tasks.
+Events; lets says that we want a logging api to know when a grade is added, or I want to know when a button is clicked on a website. These can be thought of as 'significant' events. Delegates are useful with events because we can define a delegate and at runtime point that delegate to different methods making the desired announcements to other parts of an application, for example that logging api. When declaring an event delegate the convention is to pass 'object sender' as the first parameter and the second parameter is some form of event arguments. An event is a member of a class (and we can use a delegate to define an event member as part of a class).
+```
+// GradeAddedDelegate.cs // Seperate file for delegates.
+using System; 
+namespace GradeBook
+{
+    public delegate void GradeAddedDelegate(object sender, EventArgs args);
+}
+
+public event GradeAddedDelegate GradeAdded; // without the event keyword this would be a field in a class(someone could do book.GradeAdded() and it invokes the delegate method). With 'event' it is a delegate event of type GradeAddedDelegate with the name GradeAdded.
+
+public override void AddGrade(double grade)
+{
+    if (grade >= 0 && grade <= 100)
+    {
+        grades.Add(grade);
+        if (GradeAdded != null) // is anything 'listening'? If null then no one added a method reference into the delegate so no announcements required because no one is listening.
+        {
+            GradeAdded(this, new EventArgs()); // invoke GradeAdded delegate method. Need to pass the arguments that are set in the delegate. The sender is itself, or 'this'. In python this would be 'self'.
+        }
+    }
+```
+
 ## Namespace
 If not working in a name space then you are working globally.
 ```
