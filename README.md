@@ -7,6 +7,8 @@ pluralsight.com (search Scott Allen)
 http://wirfs-brock.com (Rebecca Wirfs-Brock, book on Object Oriented Programming). OOP; objects are either knowing things, deciding things or doing things.
 www.nuget.org for packages (search, choose .NET CLI tab for download link).
 
+https://devblogs.microsoft.com/dotnet/an-introduction-to-dataframe/ C# take on Pandas dataframes.
+
 ## Useful to remember
 F12 or right click Go to Definition to see underlying type and source code.
 Right click 'change symbol' will refactor the name of a class, method etc through the program.
@@ -564,4 +566,15 @@ public override void AddGrade(double grade)
     }
 }
 ```
-## Fundementals Two
+## Type Casting
+Explicit:
+```
+double myDouble = 9.78;
+int myInt = (int) myDouble;    // Manual casting: double to int
+
+Console.WriteLine(myDouble);   // Outputs 9.78
+Console.WriteLine(myInt);      // Outputs 9
+```
+# C# Generics
+
+
