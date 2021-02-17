@@ -54,7 +54,7 @@ private void double _customerId;
 .cs (c sharp program file)
 .dll (output binary code from the cs compiler)
 # the obj and bin folders (object and binary) are created on a restore and build, which means that you only need a .csproj and .cs to get up and running.
-.sln (solution file, can be read by VSCode and dotnet CLI, keeps track of projects and tests so projects can be built and tested from one location, usess dotnet new sln).
+.sln (solution file, can be read by VSCode and dotnet CLI, keeps track of projects and tests so projects can be built and tested from one location. From CLI use 'dotnet new sln').
 ```
 ## Reference and Value Types
 Reference types store a pointer (a reference) to a location in memory and value types store the actual value itself. Anything invoked by a class is a reference type (although remember that a struct type behaves like a value type). Int, double etc are value types (they are in fact type struct eg, struct Int32 with the alias int or struct Double with alias double). Strings are an exception to the rule, they are reference types (class types, not struct), but sometimes they behave like value types, in other words, strings are immutable in C#.
@@ -327,7 +327,7 @@ public class TypeTests
         WriteLogDelegate log; // declaration of the variable
         log = new WriteLogDelegate(ReturnMessage); // instantiate the variable and pass the delegate method as the parameter. This says, 'point log to ReturnMessage'. Long hand formulation.
         log = ReturnMessage; // short hand form of the above line.
-        var result = log("hello");
+        var result = log("hello"); // the delegate is invoked. Now, if I am off somewhere else and can not see the code above I dont know what delegate method I am invoking but what I do know is that I can invoke that delegate.
 
         Assert.Equal("hello", result); // this test will return true/pass as the result is the output of ReturnMessage, which is the string "hello' that was passed as the input parameter.
     }
@@ -336,6 +336,29 @@ public class TypeTests
     {
         return message;
     }
+```
+Now, delegates can invoke multiple methods. This are called multi-cast delegates.
+```
+int count = 0;
+[Fact]
+public void WriteLogDelegateCanPointToMethod2()
+{
+    WriteLogDelegate log = ReturnMessage;
+    log += ReturnMessage; // invoking the first delegate method.
+    log += ReturnMessage2; // invoking the second.
+    var result = log("hello"); // so here, when the log method is invoked, it will call ReturnMessage twice and ReturnMessage2 once. Count will therefore be 3.
+    Assert.Equal(3, count); // Test will pass as true.
+}
+string ReturnMessage(string message)
+{
+    count ++;
+    return message;
+}
+string ReturnMessage2(string message)
+{
+    count ++;
+    return message;
+}
 ```
 ## Namespace
 If not working in a name space then you are working globally.
