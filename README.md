@@ -348,6 +348,7 @@ public void WriteLogDelegateCanPointToMethod2()
     log += ReturnMessage2; // invoking the second.
     var result = log("hello"); // so here, when the log method is invoked, it will call ReturnMessage twice and ReturnMessage2 once. Count will therefore be 3.
     Assert.Equal(3, count); // Test will pass as true.
+    Assert.Equal("HELLO", result); Test will also pass as the last method invoked was ReturnMessage2, which returns the string in upper case.
 }
 string ReturnMessage(string message)
 {
@@ -357,9 +358,10 @@ string ReturnMessage(string message)
 string ReturnMessage2(string message)
 {
     count ++;
-    return message;
+    return message.ToUpper();
 }
 ```
+Multi-cast delegates are powerful because you can declare a varibale of a delegate type and then point it at various methods that is turn perform various tasks!
 ## Namespace
 If not working in a name space then you are working globally.
 ```
