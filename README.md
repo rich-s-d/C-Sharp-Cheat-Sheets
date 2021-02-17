@@ -315,6 +315,7 @@ public const string CATEGORY = "Science";
 ```
 ### Delegates and Events
 See module 8 of C sharp fundementals 1 by Scott Allen.
+A delegate describes what a method will look like.
 ## Namespace
 If not working in a name space then you are working globally.
 ```
