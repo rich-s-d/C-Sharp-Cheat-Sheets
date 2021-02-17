@@ -315,7 +315,28 @@ public const string CATEGORY = "Science";
 ```
 ### Delegates and Events
 See module 8 of C sharp fundementals 1 by Scott Allen.
-A delegate describes what a method will look like.
+A delegate describes what a method will look like. A delegate points to and invokes different methods; the method has to have a specific shape and structure that is defined by the delegate (ie., return type, types of parameters, numbers of parameters). For example you can implement a variable of delegate type, which can point to various methods with the same structure, but with different implementations, so one could write to a file, another to the console.
+```
+public delegate string WriteLogDelegate(string logMessage); // delegate describes structure, ie, must return string, takes one parameter of type string.
+
+public class TypeTests
+{
+    [Fact]
+    public void WriteLogDelegateCanPointToMethod()
+    {
+        WriteLogDelegate log; // declaration of the variable
+        log = new WriteLogDelegate(ReturnMessage); // instantiate the variable and pass the delegate method as the parameter. This says, 'point log to ReturnMessage'. Long hand formulation.
+        log = ReturnMessage; // short hand form of the above line.
+        var result = log("hello");
+
+        Assert.Equal("hello", result); // this test will return true/pass as the result is the output of ReturnMessage, which is the string "hello' that was passed as the input parameter.
+    }
+
+    string ReturnMessage(string message) // a delegate method, it returns a string and takes one parameter of type string.
+    {
+        return message;
+    }
+```
 ## Namespace
 If not working in a name space then you are working globally.
 ```
