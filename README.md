@@ -314,6 +314,7 @@ Even more restrictive than readonly; defined not able to be set or modified in t
 public const string CATEGORY = "Science";
 ```
 ### Delegates and Events
+If working with ASP.NET Core to build server side applications on top of .NET Core you may not come accross events. But Desktop or Mobile Frameworks, like WPF, use events, because every UI interaction is an event (when does button click or mouse move are events that you can listen for).
 A delegate describes what a method will look like. A delegate points to and invokes different methods; the method has to have a specific shape and structure that is defined by the delegate (ie., return type, types of parameters, numbers of parameters). For example you can implement a variable of delegate type, which can point to various methods with the same structure, but with different implementations, so one could write to a file, another to the console.
 ```
 public delegate string WriteLogDelegate(string logMessage); // delegate describes structure, ie, must return string, takes one parameter of type string.
@@ -370,7 +371,7 @@ namespace GradeBook
     public delegate void GradeAddedDelegate(object sender, EventArgs args);
 }
 
-public event GradeAddedDelegate GradeAdded; // without the event keyword this would be a field in a class(someone could do book.GradeAdded() and it invokes the delegate method). With 'event' it is a delegate event of type GradeAddedDelegate with the name GradeAdded.
+public event GradeAddedDelegate GradeAdded; // A delegate event of type GradeAddedDelegate with the name GradeAdded. Without the event keyword this would be a field in a class(yoy can do book.GradeAdded() and invoke the delegate method). For all intend and purposes it will work without the keyword 'event', but with 'event' there are some restrictions that are safer to use, ie., back in the program.cs you can not assign a value to the delegate method, ie., book.GradeAdded = null; will not compile. If it did compile, then it would reset anything earlier on the method invocation list and you dont necessarily want that. To allows assignment of book.GradeAdded = null;, then remove the 'event' keyword.
 
 public override void AddGrade(double grade)
 {
@@ -379,11 +380,25 @@ public override void AddGrade(double grade)
         grades.Add(grade);
         if (GradeAdded != null) // is anything 'listening'? If null then no one added a method reference into the delegate so no announcements required because no one is listening.
         {
+            // Raise the event (invoke)
             GradeAdded(this, new EventArgs()); // invoke GradeAdded delegate method. Need to pass the arguments that are set in the delegate. The sender is itself, or 'this'. In python this would be 'self'.
         }
     }
 ```
+Raising the event is to invoke it (GradeAdded(this, new EventArgs());, handling an event is to add a method(s) into the invocation list using the +=/-= operator. The below would print "A grade was added" only once (it was added twice and removed once).
+```
+    var book = new InMemoryBook("Shane's Grade Book");
+    book.GradeAdded += OnGradeAdded; // subscribing to an event
+    book.GradeAdded += OnGradeAdded;
+    book.GradeAdded -= OnGradeAdded;
 
+// the main method is static so the method must also be static as static memebers can only reach other static members.
+// this method is invoked by the GradeAdded delegate above. To be invoked by the GradeAdded delegate it must comply; it returns void and takes two parameters, the sender and EventArgs.
+static void OnGradeAdded(object sender, EventArgs e)
+{
+    System.Console.WriteLine("A grade was added"); // Handling an event.
+}
+```
 ## Namespace
 If not working in a name space then you are working globally.
 ```
