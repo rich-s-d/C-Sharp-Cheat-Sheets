@@ -103,13 +103,22 @@ private int GetInt()
 }
 ```
 ## Collections
-### Arrays
-Have a fixed size whereas lists can invoke the .Add() method.
+note on arguments: the params keyword can be used when building arguments to allow the compiler to build a collection under the hood. If you hover over Split() you will see Split(params char[] etc). See below:
 ```
-# create a double point floating array with a length of three.
+// Split() takes an array of characters, but one can simply pass the argument ',' because params is passed in construction of the Split method.
+line.Split(var char[] {','};
+// is the same as
+line.Split(',')
+```
+### Arrays
+Have a fixed size whereas lists can invoke the .Add() method. If you instatiate an array the values will be full of nulls unless you initialise the values. Nulls because an array is a reference type; value types would be zero. If number of instatiated items is unknown a list is better.
+```
+# create a double point floating array with a length of three. You can also pass a collection intialiser using {}.
 double numbers = new [3]; 
+double number = new [] {45.1, 23, 2.3};
 ```
 ### Lists
+As opposed to arrays, lists can be resized and instatiated with an unknown number of values.
 ```
 List<int> numbers = new List<int>();
 numbers.Add(2);
