@@ -102,13 +102,14 @@ private int GetInt()
     return 3;
 }
 ```
-## Arrays
+## Collections
+### Arrays
 Have a fixed size whereas lists can invoke the .Add() method.
 ```
 # create a double point floating array with a length of three.
 double numbers = new [3]; 
 ```
-## Lists
+### Lists
 ```
 List<int> numbers = new List<int>();
 numbers.Add(2);
@@ -116,7 +117,7 @@ numbers.Add(2);
 int[] array = new int[] {1, 2, 3};
 numbers.AddRange(array);
 ```
-## Dictionaries
+### Dictionaries
 ```
 using System;
 using System.Collections.Generic;
