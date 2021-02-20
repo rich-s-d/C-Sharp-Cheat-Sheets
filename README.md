@@ -110,11 +110,12 @@ line.Split(var char[] {','};
 // is the same as
 line.Split(',')
 ```
+StreamReader is a useful class for populating collections. It uses a method ReadLine() to extract each line of a file.
 ### Arrays
 Have a fixed size whereas lists can invoke the .Add() method. If you instatiate an array the values will be full of nulls unless you initialise the values. Nulls because an array is a reference type; value types would be zero. If number of instatiated items is unknown a list is better.
 ```
 # create a double point floating array with a length of three. You can also pass a collection intialiser using {}.
-double numbers = new [3]; 
+double numbers = new [3]; // numbers == [null, null, null]
 double number = new [] {45.1, 23, 2.3};
 ```
 ### Lists
