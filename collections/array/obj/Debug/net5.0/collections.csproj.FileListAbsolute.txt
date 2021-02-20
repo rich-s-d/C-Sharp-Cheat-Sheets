@@ -1,0 +1,16 @@
+/home/parallels/csharp/collections/bin/Debug/net5.0/collections
+/home/parallels/csharp/collections/bin/Debug/net5.0/collections.deps.json
+/home/parallels/csharp/collections/bin/Debug/net5.0/collections.runtimeconfig.json
+/home/parallels/csharp/collections/bin/Debug/net5.0/collections.runtimeconfig.dev.json
+/home/parallels/csharp/collections/bin/Debug/net5.0/collections.dll
+/home/parallels/csharp/collections/bin/Debug/net5.0/ref/collections.dll
+/home/parallels/csharp/collections/bin/Debug/net5.0/collections.pdb
+/home/parallels/csharp/collections/obj/Debug/net5.0/collections.csprojAssemblyReference.cache
+/home/parallels/csharp/collections/obj/Debug/net5.0/collections.GeneratedMSBuildEditorConfig.editorconfig
+/home/parallels/csharp/collections/obj/Debug/net5.0/collections.AssemblyInfoInputs.cache
+/home/parallels/csharp/collections/obj/Debug/net5.0/collections.AssemblyInfo.cs
+/home/parallels/csharp/collections/obj/Debug/net5.0/collections.csproj.CoreCompileInputs.cache
+/home/parallels/csharp/collections/obj/Debug/net5.0/collections.dll
+/home/parallels/csharp/collections/obj/Debug/net5.0/ref/collections.dll
+/home/parallels/csharp/collections/obj/Debug/net5.0/collections.pdb
+/home/parallels/csharp/collections/obj/Debug/net5.0/collections.genruntimeconfig.cache
