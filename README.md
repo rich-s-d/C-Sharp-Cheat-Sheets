@@ -119,7 +119,7 @@ double numbers = new [3]; // numbers == [null, null, null]
 double number = new [] {45.1, 23, 2.3};
 ```
 ### Lists
-As opposed to arrays, lists can be resized and instatiated with an unknown number of values.
+As opposed to arrays, lists can be resized and instatiated with an unknown number of values. Collection initialiser can be used (which instantiates an empty list under the hood and repeatedly calls the Add() method. To instatiate a list is as to instatiate any C# type (arrays are an exception because they are part of the .NET Runtime/Framework and lists are a C# type).
 ```
 List<int> numbers = new List<int>();
 numbers.Add(2);
@@ -586,6 +586,15 @@ int myInt = (int) myDouble;    // Manual casting: double to int
 Console.WriteLine(myDouble);   // Outputs 9.78
 Console.WriteLine(myInt);      // Outputs 9
 ```
-# C# Generics
+# C# Generics - reuse code with type safety - introduced in version 2.
+Generics allow you to paramatarise data types so you dont have to commit to a certain data type (say string, or int, or Country) at compile time. Why? You could commit everything to an object type, but as a reference type, the object will be forced to add value types to the heap at runtime and this is inefficient because the value have to be boxed and then unboxed later when used. Use T, type.
+```
+public class CircularBuffer<T> // Generic Class. T is the type parameter. This now called "circular buffer of T" not just circular buffer.
+{
+    private T[] _buffer;
+    // private List<T> _buffer2;
+}
 
+CircularBuffer buffer = new CircularBuffer<double>(); // <double>, the angular brackets contain the type argument, in this case double. Could be any type of array, <string> for example.
+```
 
