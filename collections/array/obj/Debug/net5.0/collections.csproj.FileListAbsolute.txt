@@ -14,3 +14,11 @@
 /home/parallels/csharp/collections/obj/Debug/net5.0/ref/collections.dll
 /home/parallels/csharp/collections/obj/Debug/net5.0/collections.pdb
 /home/parallels/csharp/collections/obj/Debug/net5.0/collections.genruntimeconfig.cache
+/home/parallels/C-Sharp-Cheat-Sheets/collections/array/obj/Debug/net5.0/collections.csprojAssemblyReference.cache
+/home/parallels/C-Sharp-Cheat-Sheets/collections/array/obj/Debug/net5.0/collections.GeneratedMSBuildEditorConfig.editorconfig
+/home/parallels/C-Sharp-Cheat-Sheets/collections/array/obj/Debug/net5.0/collections.AssemblyInfoInputs.cache
+/home/parallels/C-Sharp-Cheat-Sheets/collections/array/obj/Debug/net5.0/collections.AssemblyInfo.cs
+/home/parallels/C-Sharp-Cheat-Sheets/collections/array/obj/Debug/net5.0/collections.csproj.CoreCompileInputs.cache
+/home/parallels/C-Sharp-Cheat-Sheets/collections/array/obj/Debug/net5.0/collections.dll
+/home/parallels/C-Sharp-Cheat-Sheets/collections/array/obj/Debug/net5.0/ref/collections.dll
+/home/parallels/C-Sharp-Cheat-Sheets/collections/array/obj/Debug/net5.0/collections.pdb

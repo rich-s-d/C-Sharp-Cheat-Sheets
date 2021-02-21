@@ -15,7 +15,10 @@ namespace collections
             //     System.Console.WriteLine($"{country.Population}: {country.Name}");
             // }
             int[] arrayOfValueTypes = new int[4];
-            Country[] arrayOfRefTypes = new Country[1];
+            Country[] arrayOfRefTypes = new Country[1] 
+            {
+                new Country { Name = "Ghana", Code = "test", Region = "WA", Population = 1000}
+            };
 
             foreach (var item in arrayOfValueTypes)
             {

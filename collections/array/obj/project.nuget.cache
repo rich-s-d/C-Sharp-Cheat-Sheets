@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gu4nLUsX5qJ7hMsEuOy535xt94PWMMy9xXt+6MpJV8qeerUDzxPBhK9UE4P3wT9qfynZW3RFmsM+pg2cX1j4LQ==",
+  "dgSpecHash": "m6r6KYo7zMb/xYE9DudzYrnXCXfGLGeRzWF/cicXUMwXK5XRlm6pbHO/yYo4u58Y3QYEKZbTEiHmf6jIkeGSCw==",
   "success": true,
-  "projectFilePath": "/home/parallels/csharp/collections/collections.csproj",
+  "projectFilePath": "/home/parallels/C-Sharp-Cheat-Sheets/collections/array/collections.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

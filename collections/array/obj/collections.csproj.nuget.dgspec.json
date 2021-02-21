@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/parallels/csharp/collections/collections.csproj": {}
+    "/home/parallels/C-Sharp-Cheat-Sheets/collections/array/collections.csproj": {}
   },
   "projects": {
-    "/home/parallels/csharp/collections/collections.csproj": {
+    "/home/parallels/C-Sharp-Cheat-Sheets/collections/array/collections.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/parallels/csharp/collections/collections.csproj",
+        "projectUniqueName": "/home/parallels/C-Sharp-Cheat-Sheets/collections/array/collections.csproj",
         "projectName": "collections",
-        "projectPath": "/home/parallels/csharp/collections/collections.csproj",
+        "projectPath": "/home/parallels/C-Sharp-Cheat-Sheets/collections/array/collections.csproj",
         "packagesPath": "/home/parallels/.nuget/packages/",
-        "outputPath": "/home/parallels/csharp/collections/obj/",
+        "outputPath": "/home/parallels/C-Sharp-Cheat-Sheets/collections/array/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/parallels/.nuget/NuGet/NuGet.Config"
