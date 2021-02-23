@@ -1,5 +1,4 @@
 # C-Sharp-Cheat-Sheet
-testing git
 
 Personal cheat sheet and tidbits for working in the C# .Net framework.
 
@@ -118,15 +117,24 @@ Have a fixed size whereas lists can invoke the .Add() method. This size can neve
 # create a double point floating array with a length of three. You can also pass a collection intialiser using {}.
 double numbers = new [3]; // numbers == [null, null, null]
 double numbers2 = new [] {45.1, 23, 2.3};
+
+// Arrays can be resized, but it may be more memory efficient to use a list.
+Array.Resize(ref numbers, 5);
+
+// Length of array
+numbers.Length
 ```
 ### Lists
-As opposed to arrays, lists can be resized and instatiated with an unknown number of values. Collection initialiser can be used (which instantiates an empty list under the hood and repeatedly calls the Add() method. To instatiate a list is as to instatiate any C# type (arrays are an exception because they are part of the .NET Runtime/Framework and lists are a C# type).
+As opposed to arrays, lists can be resized and instatiated with an unknown number of values. Collection initialiser can be used (which instantiates an empty list under the hood and repeatedly calls the Add() method. To instatiate a list is as to instatiate any C# type (arrays are an exception because they are part of the .NET Runtime/Framework and lists are a C# type). An array has Lenght, a list has Count.
 ```
 List<int> numbers = new List<int>();
 numbers.Add(2);
 
 int[] array = new int[] {1, 2, 3};
 numbers.AddRange(array);
+
+//Length of list
+numbers.Count
 ```
 ### Dictionaries
 ```
@@ -375,7 +383,7 @@ string ReturnMessage2(string message)
     return message.ToUpper();
 }
 ```
-Multi-cast delegates are powerful because you can declare a varibale of a delegate type and then point it at various methods that perform different tasks.
+Multi-cast delegates are powerful because you can declare a variable of a delegate type and then point it at various methods that perform different tasks.
 Events; lets says that we want a logging api to know when a grade is added, or I want to know when a button is clicked on a website. These can be thought of as 'significant' events. Delegates are useful with events because we can define a delegate and at runtime point that delegate to different methods making the desired announcements to other parts of an application, for example that logging api. When declaring an event delegate the convention is to pass 'object sender' as the first parameter and the second parameter is some form of event arguments. An event is a member of a class (and we can use a delegate to define an event member as part of a class).
 ```
 // GradeAddedDelegate.cs // Seperate file for delegates.
@@ -457,7 +465,7 @@ Book? book = null;
 3. Polymorphism - objects of the same type that can behave differently (also can be considered a form of encapsulation - it can hide details behind an object, ie. how to store data where).
 
 ### Encapsulation
-Most import of the three pillars! Other than using classes, methods fields and properties to give encapsulation, one can also use interfaces. Interfaces are similar to a class, but they are pure, meaning that unlike a class they do not require implemenation details. So whereas an abstract class (described further below under polymorphism) can contain methods and code, an interface is only going to describe the members that will be available on this type. An unlimited number of interfaces can be added to a class in a comma seperated list after the inherited base class. When you implement an interface, you must have those members in your class - also if those members are abstract. To make methods available in a class use the override keyword. 
+Most important of the three pillars! Other than using classes, methods fields and properties to give encapsulation, one can also use interfaces. Interfaces are similar to a class, but they are pure, meaning that unlike a class they do not require implemenation details. So whereas an abstract class (described further below under polymorphism) can contain methods and code, an interface is only going to describe the members that will be available on this type. An unlimited number of interfaces can be added to a class in a comma seperated list after the inherited base class. When you implement an interface, you must have those members in your class - also if those members are abstract. To make methods available in a class use the override keyword. 
 ```
 public interface IBook
 {   
