@@ -21,6 +21,9 @@ Build in generic collections; Interfaces, Classes, Delegates.
 Async C#; using async, await, task.
 ASP.Net is the Microsoft Web Framework.
 
+## Common runtime errors I encounter coming from a python background with dynamic typing:
+1. 'The name 'employee' does not exist in the current context' - remember to be explicit, use 'var'.
+2. 
 ## Bash Commands
 ```
 dotnet run
@@ -56,7 +59,7 @@ private void double _customerId;
 .cs (c sharp program file)
 .dll (output binary code from the cs compiler)
 # the obj and bin folders (object and binary) are created on a restore and build, which means that you only need a .csproj and .cs to get up and running.
-.sln (solution file, can be read by VSCode and dotnet CLI, keeps track of projects and tests so projects can be built and tested from one location. From CLI use 'dotnet new sln').
+.sln (solution file, can be read by VSCode and dotnet CLI, keeps track of projects and tests so projects can be built and tested from one location. Add project files (src and test) to solution file. From CLI use 'dotnet new sln'), then dotnet sln (add, list, remove) filepath as need be. 
 ```
 ## Reference and Value Types
 Reference types store a pointer (a reference) to a location in memory and value types store the actual value itself. Anything invoked by a class is a reference type (although remember that a struct type behaves like a value type). Int, double etc are value types (they are in fact type struct eg, struct Int32 with the alias int or struct Double with alias double). Strings are an exception to the rule, they are reference types (class types, not struct), but sometimes they behave like value types, in other words, strings are immutable in C#.
@@ -136,11 +139,44 @@ numbers.AddRange(array);
 //Length of list
 numbers.Count
 ```
-### Queue of T
-When you need to control the order of insertion and retrieval use a queue.
+### Queue of T (FIFO: first in first out)
+When you need to control the order of insertion and retrieval use a queue. The following employees were entered in the order 1) Maike, 2) Schafer and were returned in the same order (FIFO - first in first out):
 ```
+Queue<Employee> line = new Queue<Employee>();
+line.Enqueue(new Employee { Name = "Maike" }); // adds to head of queue
+line.Enqueue(new Employee { Name = "Schafer"});
 
+while (line.Count != 0) // because dequeue will remove items from the queue.
+{
+    var employee = line.Dequeue();
+    System.Console.WriteLine(employee.Name);
+}
+
+// returns
+Maike
+Schafer
 ```
+Once an item is dequeued it is removed. You can look at the next item in the queue with .Peek(), search with .Contains() and look at everything in the queue with an .ToArray(), which returns a copy of the queue as an array.
+
+### Stack of T (LIFO: last in first out)
+Exactly as FIFO above but add with .Push() and dequeue with .Pop(). Used if you need to deal with something else and then come back to what you were working on. You can look at the next item in the queue with .Peek(), search with .Contains() and look at everything in the queue with an .ToArray(), which returns a copy of the queue as an array.
+
+### Hash Set (as in Mathematics a set of unique items).
+You can not index into a set as the order is unknown. Sets are nice for doing intersections, ie., returns items in both sets (essentially a spatial join). Or a union (returns a set with all items in both sets (but only unique items of course!). Various other mathematical set operations, such as SymmetricExceptWith (returns a set with items that are only in one set or the other but not both).
+```
+HashSet<int> set = new HashSet<int>();
+set.Add(2);
+set.Add(1);
+set.Add(2);
+
+foreach(var number in set)
+{
+    System.Console.WriteLine(number);
+}
+System.Console.WriteLine($@"There are {set.Count} unique items in this Hash Set
+but three items were added");
+```
+Be aware: if adding an object with the same parameter name, Name = "foo" for example, because the two objects have different reference pointers they will both be added to the set.
 ### Dictionaries
 ```
 using System;
