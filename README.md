@@ -136,6 +136,11 @@ numbers.AddRange(array);
 //Length of list
 numbers.Count
 ```
+### Queue of T
+When you need to control the order of insertion and retrieval use a queue.
+```
+
+```
 ### Dictionaries
 ```
 using System;
