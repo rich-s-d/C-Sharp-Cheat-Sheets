@@ -117,7 +117,7 @@ Have a fixed size whereas lists can invoke the .Add() method. This size can neve
 ```
 # create a double point floating array with a length of three. You can also pass a collection intialiser using {}.
 double numbers = new [3]; // numbers == [null, null, null]
-double number = new [] {45.1, 23, 2.3};
+double numbers2 = new [] {45.1, 23, 2.3};
 ```
 ### Lists
 As opposed to arrays, lists can be resized and instatiated with an unknown number of values. Collection initialiser can be used (which instantiates an empty list under the hood and repeatedly calls the Add() method. To instatiate a list is as to instatiate any C# type (arrays are an exception because they are part of the .NET Runtime/Framework and lists are a C# type).
