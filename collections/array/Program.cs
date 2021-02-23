@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace collections
 {
@@ -15,16 +16,14 @@ namespace collections
             //     System.Console.WriteLine($"{country.Population}: {country.Name}");
             // }
             int[] arrayOfValueTypes = new int[4];
-            Country[] arrayOfRefTypes = new Country[1] 
-            {
-                new Country { Name = "Ghana", Code = "test", Region = "WA", Population = 1000}
-            };
+            List<Country> listOfRefTypes = new List<Country>();
+            listOfRefTypes.Add(new Country {Name = "Ghana", Code = "test", Region = "WA", Population = 1000});
 
             foreach (var item in arrayOfValueTypes)
             {
                 System.Console.WriteLine(item);
             }
-            foreach (Country country in arrayOfRefTypes)
+            foreach (Country country in listOfRefTypes)
             {
                 System.Console.WriteLine(country.Name);
             }

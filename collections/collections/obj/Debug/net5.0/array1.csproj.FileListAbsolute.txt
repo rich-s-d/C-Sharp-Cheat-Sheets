@@ -1,0 +1,16 @@
+/home/parallels/C-Sharp-Cheat-Sheets/collections/array1/obj/Debug/net5.0/array1.csprojAssemblyReference.cache
+/home/parallels/C-Sharp-Cheat-Sheets/collections/array1/obj/Debug/net5.0/array1.GeneratedMSBuildEditorConfig.editorconfig
+/home/parallels/C-Sharp-Cheat-Sheets/collections/array1/obj/Debug/net5.0/array1.AssemblyInfoInputs.cache
+/home/parallels/C-Sharp-Cheat-Sheets/collections/array1/obj/Debug/net5.0/array1.AssemblyInfo.cs
+/home/parallels/C-Sharp-Cheat-Sheets/collections/array1/obj/Debug/net5.0/array1.csproj.CoreCompileInputs.cache
+/home/parallels/C-Sharp-Cheat-Sheets/collections/array1/bin/Debug/net5.0/array1
+/home/parallels/C-Sharp-Cheat-Sheets/collections/array1/bin/Debug/net5.0/array1.deps.json
+/home/parallels/C-Sharp-Cheat-Sheets/collections/array1/bin/Debug/net5.0/array1.runtimeconfig.json
+/home/parallels/C-Sharp-Cheat-Sheets/collections/array1/bin/Debug/net5.0/array1.runtimeconfig.dev.json
+/home/parallels/C-Sharp-Cheat-Sheets/collections/array1/bin/Debug/net5.0/array1.dll
+/home/parallels/C-Sharp-Cheat-Sheets/collections/array1/bin/Debug/net5.0/ref/array1.dll
+/home/parallels/C-Sharp-Cheat-Sheets/collections/array1/bin/Debug/net5.0/array1.pdb
+/home/parallels/C-Sharp-Cheat-Sheets/collections/array1/obj/Debug/net5.0/array1.dll
+/home/parallels/C-Sharp-Cheat-Sheets/collections/array1/obj/Debug/net5.0/ref/array1.dll
+/home/parallels/C-Sharp-Cheat-Sheets/collections/array1/obj/Debug/net5.0/array1.pdb
+/home/parallels/C-Sharp-Cheat-Sheets/collections/array1/obj/Debug/net5.0/array1.genruntimeconfig.cache
