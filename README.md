@@ -176,7 +176,28 @@ foreach(var number in set)
 System.Console.WriteLine($@"There are {set.Count} unique items in this Hash Set
 but three items were added");
 ```
-Be aware: if adding an object with the same parameter name, Name = "foo" for example, because the two objects have different reference pointers they will both be added to the set.
+Be aware: if adding an object with the same parameter name, Name = "foo" for example as another object, because the two objects are not the same (they have different reference pointers) they will both be added to a set; simply they are different objects with the same parameter name. It goes without saying then that the same object can not be added to a HashSet.
+
+### Linked List
+LinkedLists are very efficient if you need to make frequent additions and removals as they use constant time. In the .NET framework it is called a doubly linked list. You can not index these lists, but you can access and change list using AddBefore, AddAfter, RemoveFirst, RemoveLast, and by using First and Last, Previous and Next, which are objects of type LinkedListNode. Value will return the value of the node.
+``` 
+LinkedList<int> list = new LinkedList<int>();
+list.AddFirst(3);
+list.AddFirst(2);
+
+var first = list.First;
+var secondLast = list.Last.Previous;
+list.AddAfter(first, 5);
+list.AddBefore(secondLast, 10);
+
+var node = list.First;
+while(node != null) // node = null when no next or previous item.
+{
+    System.Console.WriteLine(node.Value);
+    node = node.Next;
+}
+```
+
 ### Dictionaries
 ```
 using System;
