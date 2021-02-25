@@ -105,7 +105,13 @@ private int GetInt()
     return 3;
 }
 ```
-## Collections
+## Collections 
+
+## Collection Notes
+1. For Generics use <T> (System.Generic.Collections namespace)
+2. Concurrent collections (multithread safe) shipped with .NET 4.
+3. Immutable collections, modifications produce new collections, availbale on NuGet. Shipped with .NET core yet?
+
 note on arguments: the params keyword can be used when building arguments to allow the compiler to build a collection under the hood. If you hover over Split() you will see Split(params char[] etc). See below:
 ```
 // Split() takes an array of characters, but one can simply pass the argument ',' because params is passed in construction of the Split method.
