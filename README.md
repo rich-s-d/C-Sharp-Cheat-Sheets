@@ -197,29 +197,36 @@ while(node != null) // node = null when no next or previous item.
     node = node.Next;
 }
 ```
-
-### Dictionaries
+### Dictionaries - Map Things
+Unlike the other collection objects one must define two parameters, TKey and TValue. Dictionarys as in other languages allow searching on a key. Searching a dictionary is efficient and quick, because keys are unique (you can not add a key that already exisits). Using mapping methods are ContainsKey() for example.
 ```
-using System;
-using System.Collections.Generic;
+Dictionary<string, Employee> employeesByName = new Dictionary<string, Employee>();// multiple generic type parameters seperated by a comma.
+employeesByName.Add("Daniel", new Employee("Daniel"));
+employeesByName.Add("Maike", new Employee { Name = "Maike"});
+employeesByName.Add("Ingrid", new Employee("Ingrid"));
 
-public class Hello
+var Shane = employeesByName["Daniel"];
+
+foreach (var employee in employeesByName)
 {
-    public static void Main()
-    {
-        // TODO: add the inventory dictionary here
-        Dictionary<string, long> inventory = new Dictionary<string, long>();
-        inventory["apple"] = 3;
-        inventory["orange"] = 5;
-        inventory["banana"] = 2;
-
-        Console.WriteLine(inventory["apple"]);
-        Console.WriteLine(inventory["orange"]);
-        Console.WriteLine(inventory["banana"]);
-
-    }
+    System.Console.WriteLine(employee.Key);
+    System.Console.WriteLine(employee.Value.Name);
 }
+
+// or
+
+Dictionary<string, long> inventory = new Dictionary<string, long>();
+inventory["apple"] = 3;
+inventory["orange"] = 5;
+inventory["banana"] = 2;
+
+Console.WriteLine(inventory["apple"]);
+Console.WriteLine(inventory["orange"]);
+Console.WriteLine(inventory["banana"]);
 ```
+### SortedDictionaries, SortedList
+As per dictionaries but the keys are ordered. Both take a key and a value (yes, also the SortedList). Difference? SortedList is optimised for efficient reading/looping. SortedDictionary is optimised for efficient editing or using the key/value statements quite often. There is also a SortedSet that takes one value (no key)
+
 ## Strings
 ```
 string emptyString = String.Empty;
