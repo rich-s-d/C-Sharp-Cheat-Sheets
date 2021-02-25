@@ -19,13 +19,12 @@ namespace Collections.Test
             var set2 = new HashSet<int>() {2, 3, 4};
 
             set1.SymmetricExceptWith(set2);
+            
+            var set3 = new[] {1, 4};
 
-            // Assert.IsTrue(set1.SetEquals(new[] {1, 4}));
-            // Assert.Equals(set1.SetEquals, new[] {1, 4});
+            Assert.Equal(set1, set3);
+            Assert.Equal(set1, new[] {1,4});
 
-            Assert.Equal(1, 1);
         }
-        
-        
     }
 }

@@ -24,7 +24,9 @@ namespace Collections
             }
 
             List<Country> listOfRefTypes = new List<Country>();
-            listOfRefTypes.Add(new Country { Name = "Ghana", Code = "test", Region = "WA", Population = 1000 });
+            // the below instantiation will only work if Country paramenter are public.
+            // listOfRefTypes.Add(new Country { Name = "Ghana", Code = "test", Region = "WA", Population = 1000 });
+            listOfRefTypes.Add(new Country("Ghana", "test", "WA", 1000));
 
             foreach (Country country in listOfRefTypes)
             {
@@ -70,6 +72,46 @@ namespace Collections
             }
             System.Console.WriteLine($@"There are {set.Count} unique items in this Hash Set
             but three items were added");
+
+            LinkedList<int> list = new LinkedList<int>();
+            list.AddFirst(3);
+            list.AddFirst(2);
+
+            var first = list.First;
+            var secondLast = list.Last.Previous;
+            list.AddAfter(first, 5);
+            list.AddBefore(secondLast, 10);
+
+            var node = list.First;
+            while(node != null) // node = null when no next or previous item.
+            {
+                System.Console.WriteLine(node.Value);
+                node = node.Next;
+            }
+
+
+            Dictionary<string, Employee> employeesByName = new Dictionary<string, Employee>();// multiple generic type parameters seperated by a comma.
+            employeesByName.Add("Daniel", new Employee("Daniel"));
+            employeesByName.Add("Maike", new Employee { Name = "Maike"});
+            employeesByName.Add("Ingrid", new Employee("Ingrid"));
+
+            var Shane = employeesByName["Daniel"];
+
+            foreach (var employee in employeesByName)
+            {
+                System.Console.WriteLine(employee.Key);
+                System.Console.WriteLine(employee.Value.Name);
+            }
+
+            SortedSet<int> sortSet = new SortedSet<int>();
+            sortSet.Add(3);
+            sortSet.Add(1);
+            sortSet.Add(100);
+            System.Console.WriteLine("");
+            var enumerator = sortSet.GetEnumerator();
+            System.Console.WriteLine($"GetEnumerator returns {enumerator.Current}");
+            enumerator.MoveNext();
+            System.Console.WriteLine($"MoveNext then returns {enumerator.Current}");
 
         }
     }
