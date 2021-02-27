@@ -544,7 +544,7 @@ Book? book = null;
 3. Polymorphism - objects of the same type that can behave differently (also can be considered a form of encapsulation - it can hide details behind an object, ie. how to store data where).
 
 ### Encapsulation
-Most important of the three pillars! Other than using classes, methods fields and properties to give encapsulation, one can also use interfaces. Interfaces are similar to a class, but they are pure, meaning that unlike a class they do not require implemenation details. So whereas an abstract class (described further below under polymorphism) can contain methods and code, an interface is only going to describe the members that will be available on this type. An unlimited number of interfaces can be added to a class in a comma seperated list after the inherited base class. When you implement an interface, you must have those members in your class - also if those members are abstract. To make methods available in a class use the override keyword. 
+Most important of the three pillars of OOP. Other than using classes, methods fields and properties to give encapsulation, one can also use interfaces. Interfaces are similar to a class, but they are pure, meaning that unlike a class they do not require implemenation details. So whereas an abstract class (described further below under polymorphism) can contain methods and code, an interface is only going to describe the members that will be available on this type. An unlimited number of interfaces can be added to a class in a comma seperated list after the inherited base class. When you implement an interface, you must have those members in your class - also if those members are abstract. To make methods available in a class use the override keyword. 
 ```
 public interface IBook
 {   
@@ -572,6 +572,7 @@ public abstract class Book : NamedObject, IBook // Only one base class can be ad
 ### Inheritance
 1. Base class
 2. Derived class
+3. An abstract function has to be overridden while a virtual function may be overridden. Virtual functions can have a default /generic implementation in the base class.
 ```
 public class NamedObject
 {
@@ -603,7 +604,7 @@ public abstract class BookBase
     public abstract void AddGrade(double grade); 
 }
 ```
-Inherited classes must provide an implementation of the abstract members in the base class. Derived class methods can override abstract and virtual methods. If we make BookBase a NamedObject, we must provide the implementation for the name, in this case a constructor, because NamedObject requires the parameter 'string name' in its constructor.
+Inherited classes must provide an implementation of the abstract members in the base class. Derived class methods must override abstract members and may override virtual members. If we make BookBase a NamedObject, we must provide the implementation for the name, in this case a constructor, because NamedObject requires the parameter 'string name' in its constructor.
 ```
 namespace GradeBook
 {
@@ -685,4 +686,5 @@ public class CircularBuffer<T> // Generic Class. T is the type parameter. This n
 
 CircularBuffer buffer = new CircularBuffer<double>(); // <double>, the angular brackets contain the type argument, in this case double. Could be any type of array, <string> for example.
 ```
+One of the most important generic interfaces out there is IEnumerable of T, IEnumerable<T>. Objects that are IEnumerable<T> provide an enumerator, ie., it is possible for example to loop through items in the object. If you use IEnumerable<T> then you must of course fulfill the requirements of this interface, which in this case are two methods, GetEnumerator that returns an IEnumerator of T and another called GetEnumerator that simply returns an IEnumerator (not T). 
 
