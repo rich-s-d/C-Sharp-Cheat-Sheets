@@ -686,7 +686,7 @@ public class CircularBuffer<T> // Generic Class. T is the type parameter. This n
 
 CircularBuffer buffer = new CircularBuffer<double>(); // <double>, the angular brackets contain the type argument, in this case double. Could be any type of array, <string> for example.
 ```
-One of the most important generic interfaces out there is IEnumerable of T, IEnumerable<T>. Objects that are IEnumerable<T> provide an enumerator, ie., it is possible for example to loop through items in the object. If you use IEnumerable<T> then you must of course fulfill the requirements of this interface, which in this case are two methods, GetEnumerator that returns an IEnumerator of T and another called GetEnumerator that simply returns an IEnumerator (not T). See below for how to implement IEnumerbale<T> in a base class/class.
+One of the most important generic interfaces out there is IEnumerable of T, IEnumerable<T>. Objects that are IEnumerable<T> provide an enumerator, ie., it is possible for example to loop through items in the object. If you use IEnumerable<T> then you must of course fulfill the requirements of this interface, which in this case are two methods, GetEnumerator that returns an IEnumerator of T and another called GetEnumerator that simply returns an IEnumerator (not T). See below for how to implement IEnumerbale<T> in a base class/class. IEnumerable<T> is a great interface to support when you are building a data structure (an object) that is like a collection.
 ```
 public IEnumerable<T> GetEnumerator()
 {
