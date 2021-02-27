@@ -53,6 +53,10 @@ public interface IBook
 public const string CATEGORY = "Science"
 private void double _customerId;
 ```
+## Accessibility Levels
+1. Protected: A protected member is accessible within its class and by derived class instances.
+
+
 ## File Types
 ```
 .csproj (project file)
