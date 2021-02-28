@@ -703,3 +703,13 @@ IEnumerable IEnumerable.GetEnumerator() // must use 'explicit interface implemen
     return GetEnumerator(); // calls the GetEnumerator method above.
 }
 ```
+Other generic interfaces to keep in mind when building your own data structure (a custom list for example) (the collections implement one or more of these):
+    IList<T> allows indexing
+    ICollection<T> allows add, remove, search (using contains)
+    IDictionary<K,V> allows access by key
+    IReadOnlyCollections<T> allows enumeration and count but not changes
+    ISet<T> allows set based operations
+And two not directly implemented by built in collections:
+    IComparer<T>
+    IQualityComparer<T>
+    
