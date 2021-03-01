@@ -9,11 +9,12 @@ www.nuget.org for packages (search, choose .NET CLI tab for download link).
 
 https://devblogs.microsoft.com/dotnet/an-introduction-to-dataframe/ C# take on Pandas dataframes.
 
-## Useful to remember
+## Studio Code
 F12 or right click Go to Definition to see underlying type and source code.
 Right click 'change symbol' will refactor the name of a class, method etc through the program.
 Right click 'implement interface'.
 Generally click on the lightbulb in Studio Code for automated implementations, extractions etc.
+Shift + Ctrl + Space will show overloads in intellisense (make sure curser is in method parentheses).
 
 ## To be aware of
 LINQ Language Integrated Query. When this was introduced to C# it introduced some of the biggest changes to the language since it was invented. These changes can be helpful outside of LINQ.
