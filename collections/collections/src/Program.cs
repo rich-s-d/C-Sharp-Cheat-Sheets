@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Collections
 {
@@ -113,6 +114,56 @@ namespace Collections
             enumerator.MoveNext();
             System.Console.WriteLine($"MoveNext then returns {enumerator.Current}");
 
+    
+            var departments = new DepartmentCollection();
+
+            departments.Add("Sales", new Employee {Name = "Maike"})
+                        .Add("Sales", new Employee {Name = "Hebogaard"})
+                        .Add("Sales", new Employee {Name = "Hebogaard"});
+
+            
+            departments.Add("Engineering", new Employee {Name = "Shane"})
+                        .Add("Engineering", new Employee {Name = "Daniel"})
+                        .Add("Engineering", new Employee {Name = "Rich"});
+
+            foreach (var department in departments)
+            {
+                System.Console.WriteLine(department.Key);
+                foreach (var employee in department.Value)
+                {
+                    System.Console.WriteLine("\t" + employee.Name);
+                }
+
+            }
+        }
+    }
+    public class DepartmentCollection : SortedDictionary<string, SortedSet<Employee>>
+    {
+        public DepartmentCollection Add(string departmentName, Employee employee)
+        {
+            if(!ContainsKey(departmentName))
+            {
+                Add(departmentName, new SortedSet<Employee>(new EmployeeComparer()));
+            }
+            this[departmentName].Add(employee);
+            return this;
+        }
+    }
+    public class EmployeeComparer : IEqualityComparer<Employee>, IComparer<Employee>
+    {
+        public int Compare(Employee x, Employee y) // compare returns 0 if equal, negative if less than, positive if greater than.
+        {
+            return String.Compare(x.Name, y.Name);
+        }
+
+        public bool Equals(Employee x, Employee y)
+        {
+            return String.Equals(x.Name, y.Name);
+        }
+
+        public int GetHashCode([DisallowNull] Employee obj)
+        {
+            return obj.Name.GetHashCode();
         }
     }
 }
