@@ -678,6 +678,8 @@ Console.WriteLine(myInt);      // Outputs 9
 ```
 # C# Generics - reuse code with type safety - introduced in version 2.
 Generics allow you to paramatarise data types so you dont have to commit to a certain data type (say string, or int, or Country) at compile time. Why? You could commit everything to an object type, but as a reference type, the object will be forced to add value types to the heap at runtime and this is inefficient because the value have to be boxed and then unboxed later when used. Use T, type.
+
+## Generic Classes and Interfaces
 ```
 public class CircularBuffer<T> // Generic Class. T is the type parameter. This now called "circular buffer of T" not just circular buffer.
 {
@@ -742,3 +744,5 @@ public class EmployeeComparer : IEqualityComparer<Employee>, IComparer<Employee>
         return obj.Name.GetHashCode();
     }
 ```
+## Generic Methods and Delegates
+
