@@ -713,4 +713,32 @@ Other generic interfaces to keep in mind when building your own data structure (
 And two not directly implemented by built in collections:
     IComparer<T>
     IQualityComparer<T>
-    
+ See below for an example of a class called EmployeeComparer using the Interfaces IEqualityComparer and IComparer that is based inside the method for SortedSet to allow sorting based on a property, in this case Employee.Name.
+```
+public class DepartmentCollection : SortedDictionary<string, SortedSet<Employee>>
+{
+    public DepartmentCollection Add(string departmentName, Employee employee)
+    {
+        if(!ContainsKey(departmentName))
+        {
+            Add(departmentName, new SortedSet<Employee>(new EmployeeComparer()));
+        }
+        this[departmentName].Add(employee);
+        return this;
+    }
+}
+public class EmployeeComparer : IEqualityComparer<Employee>, IComparer<Employee>
+{
+    public int Compare(Employee x, Employee y) // compare returns 0 if equal, negative if less than, positive if greater than.
+    {
+        return String.Compare(x.Name, y.Name);
+    }
+    public bool Equals(Employee x, Employee y)
+    {
+        return String.Equals(x.Name, y.Name);
+    }
+    public int GetHashCode([DisallowNull] Employee obj)
+    {
+        return obj.Name.GetHashCode();
+    }
+```
