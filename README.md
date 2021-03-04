@@ -745,4 +745,15 @@ public class EmployeeComparer : IEqualityComparer<Employee>, IComparer<Employee>
     }
 ```
 ## Generic Methods and Delegates
-
+In generic methods the generic type parameter <T> is placed before the brackets:
+```
+public IEnumerable<TOutput> AsEnumerableOf<TOutput>() // must choose another name as T is used this generic class.
+{
+    var converter = TypeDescriptor.GetConverter(typeof(T)); // TypeDescriptor.GetConverter can convert a number of different types. Useful when converting unknown types in generic methods.
+    foreach (var item in _queue)
+    {
+        var result = converter.ConvertTo(item, typeof(TOutput));
+        yield return (TOutput)result; // yield return will build an IEnumerable. Explicit typecast to check that converter did its job and that we are returning IEnumerable of type TOutput
+    }
+}
+```
