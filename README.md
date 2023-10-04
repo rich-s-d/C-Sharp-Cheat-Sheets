@@ -3,7 +3,7 @@
 Personal cheat sheet and tidbits for working in the C# .Net framework.
 
 ## Resources
-pluralsight.com (search Scott Allen)
+pluralsight.com (search Scott Allen). The gradebook program in this repo is from his course titled C# Fundamentals.
 http://wirfs-brock.com (Rebecca Wirfs-Brock, book on Object Oriented Programming). OOP; objects are either knowing things, deciding things or doing things.
 www.nuget.org for packages (search, choose .NET CLI tab for download link).
 
