@@ -1,4 +1,4 @@
-# C-Sharp-Cheat-Sheet
+# C# Fundamentals Course from PluralSight + C-Sharp-Cheat-Sheet in ReadMe
 
 Personal cheat sheet and tidbits for working in the C# .Net framework.
 
